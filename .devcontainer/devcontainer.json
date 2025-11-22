@@ -1,0 +1,38 @@
+{
+    "name": "City Assistant Python",
+    "image": "mcr.microsoft.com/devcontainers/python:3.9",
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/node:1": {}
+    },
+    "postCreateCommand": "bash .devcontainer/setup.sh",
+    "portsAttributes": {
+        "8501": {
+            "label": "Streamlit App",
+            "onAutoForward": "openPreview"
+        },
+        "8080": {
+            "label": "Debug Server"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter",
+                "ms-python.black-formatter",
+                "usernamehw.errorlens",
+                "formulahendry.auto-rename-tag",
+                "bierner.markdown-preview-github-styles"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "editor.formatOnSave": true,
+                "editor.tabSize": 4,
+                "files.autoSave": "onFocusChange"
+            }
+        }
+    },
+    "remoteUser": "vscode"
+}
